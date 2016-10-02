@@ -1,0 +1,43 @@
+{
+  "name": "append-comma",
+  "displayName": "Append Comma",
+  "description": "Appends a comma to the end of the current line",
+  "version": "0.0.1",
+  "publisher": "vcoppola",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.appendComma"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.appendComma",
+        "title": "Append Comma"
+      }
+    ],
+    "keybindings": [{
+      "command": "extension.appendComma",
+      "key": "alt+,",
+      "mac": "alt+,",
+      "when": "editorTextFocus"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "./node_modules/.bin/tsc -p ./",
+    "compile": "./node_modules/.bin/tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  }
+}
